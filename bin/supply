@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html
+
+BUILD_DIR="${1}"
+CACHE_DIR="${2}"
+DEPS_DIR="${3}"
+DEPS_IDX="${4}"
+
+BUILDPACK_DIR=$(dirname $(readlink -f ${BASH_SOURCE%/*}))
+mkdir -p "$BUILD_DIR/.profile.d"
+
+cp -a $BUILDPACK_DIR/.profile.d/*.sh $BUILD_DIR/.profile.d/
+chmod a+x $BUILD_DIR/.profile.d/*.sh
