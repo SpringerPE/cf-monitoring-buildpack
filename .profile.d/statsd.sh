@@ -26,7 +26,6 @@ set_env_statsd() {
     local proto=$(jq -r '.credentials.statsd.proto | select (.!=null)' <<<"${datasource}")
 
     echo "*** Defining statsd env vars from service instance ${label} ..."
-
     export STATSD_HOST="${host}"
     export STATSD_PORT="${port}"
     export STATSD_PROTO="${proto}"
