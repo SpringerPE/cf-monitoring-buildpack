@@ -1,4 +1,4 @@
-# cf-monitoring-builpack
+# cf-monitoring-buildpack
 
 This is an intermediate buildpack (non final) to automatically enable monitoring compatibility
 between service broker instances and plain environment variables.
